@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SANZIO TECH</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Bouton retour en haut avec image -->
+<button id="backToTop">
+  <img src="images/MONTE.png" alt="Retour en haut" />
+</button>
+
+
+<body>
+  <!-- Barre de navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="brand">
+        <img src="images/SANZIO TECH LOGO.png" alt="Logo SANZIO TECH" class="logo">
+        <span class="brand-name">SANZIO TECH</span>
+      </div>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#actualites">Actualités</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+
+  <section id="accueil" class="presentation-container">
+    <div class="presentation-blog">
+      <h2>Présentation</h2>
+      <p>
+        SANZIO TECH est une entreprise spécialisée dans la technologie et l’innovation numérique, offrant une large gamme de services pour accompagner particuliers, entreprises et institutions dans leur transformation digitale. Nous intervenons dans la création de programmes et d’applications pour desktop et mobile, la conception de sites web et de logiciels de gestion sur mesure, ainsi que l’installation de systèmes d’exploitation et la maintenance informatique, aussi bien pour le matériel que pour les logiciels. Nous proposons également des services de design et de graphisme, incluant la conception d’affiches, de maquettes, de logos et de supports visuels modernes. En parallèle, nous assurons des formations et un apprentissage en informatique de gestion afin de renforcer les compétences numériques. Enfin, nous développons des stratégies de marketing digital et de création de contenu adaptées aux besoins des marques. Notre mission est de fournir des solutions fiables, esthétiques et performantes, en combinant créativité et expertise technique, afin de devenir un partenaire de confiance pour tous ceux qui souhaitent exploiter pleinement le potentiel des technologies modernes.
+      </p>
+    </div>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <div class="agents-slider">
+      <div class="agent-card">
+        <img src="images/sanzio.jpg" alt="Agent 1">
+        <h3>MUTEDJI YUMA raphael</h3>
+        <p>Directeur Generale des Operations</p>
+      </div>
+      <div class="agent-card">
+        <img src="images/raphael.jpg" alt="Agent 2">
+        <h3>PANDWE LUISULA Apollinaire</h3>
+        <p>Maintenancier et Formateur</p>
+      </div>
+      <div class="agent-card">
+        <img src="images/daniel.jpg" alt="Agent 3">
+        <h3>DANIEL KABAMBA</h3>
+        <p>WEB developeur</p>
+      </div>
+    </div>
+  </section>
+
+    <!-- tu peux ajouter autant d’agents que tu veux -->
+  </div>
+</section>
+
+
+    <!-- Section Services -->
+    <section id="services">
+      <div class="services-header">
+        <h2>NOS SERVICES</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card"><img src="images/service1.jpg" alt="Programmation Web"><h3>Programmation Web</h3></div>
+        <div class="service-card"><img src="images/developeur.jpg" alt="Programmation non Web"><h3>Développement mobile et desktop</h3></div>
+        <div class="service-card"><img src="images/maintenance.png" alt="Maintenance"><h3>Maintenance matériel & logiciel</h3></div>
+        <div class="service-card"><img src="images/formation.jpg" alt="Formation en informatique"><h3>Formation en informatique</h3></div>
+        <div class="service-card"><img src="images/Graphic.jpg" alt="Graphisme"><h3>Graphisme et modélisation</h3></div>
+        <div class="service-card"><img src="images/marketing.jpg" alt="Marketing digital"><h3>Marketing digital</h3></div>
+        <div class="service-card"><img src="images/etude.jpg" alt="Graphisme"><h3>Analyse et études des projets en informatique</h3></div>
+        <div class="service-card"><img src="images/design.jpg" alt="Marketing digital"><h3>design et imprimérie</h3></div>
+      </div>
+
+      <!-- cercle animmmé -->
+      <div class="circle-sequence">
+        <span class="ring ring-1"></span>
+        <span class="ring ring-2"></span>
+        <span class="ring ring-3"></span>
+      </div>
+    
+    
+    </section>
+  
+  
+    <section id="actualites" class="actualites-section">
+      <div class="actualites-header">
+        <h2>Actualités</h2>
+      </div>
+    
+      <div class="actualites-container">
+        <!-- Colonne Photo -->
+        <div class="blog-image">
+          <img src="images/projet.jpg" alt="Photo 1">
+        </div>
+    
+        <!-- Colonne Vidéo -->
+        <div class="blog-video">
+          <video id="videoPlayer" controls autoplay muted width="100%" height="300">
+            <source src="videos/demo.mp4" type="video/mp4">
+          </video>
+      
+          <div class="video-controls">
+            <button id="prevBtn">◀ Précédent</button>
+            <button id="nextBtn">▶ Suivant</button>
+          </div>
+        </div>
+        
+        <script>
+          // Playlist des vidéos
+          const playlist = [
+            "videos/demo.mp4",
+            "videos/demo2.mp4"
+          ];
+        
+          let currentIndex = 0;
+          const videoPlayer = document.getElementById("videoPlayer");
+          const prevBtn = document.getElementById("prevBtn");
+          const nextBtn = document.getElementById("nextBtn");
+        
+          // Fonction pour charger une vidéo
+          function loadVideo(index) {
+            videoPlayer.src = playlist[index];
+            videoPlayer.play();
+          }
+        
+          // Bouton suivant
+          nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % playlist.length;
+            loadVideo(currentIndex);
+          });
+        
+          // Bouton précédent
+          prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + playlist.length) % playlist.length;
+            loadVideo(currentIndex);
+          });
+        
+          // Quand une vidéo se termine → passer automatiquement à la suivante
+          videoPlayer.addEventListener("ended", () => {
+            currentIndex = (currentIndex + 1) % playlist.length;
+            loadVideo(currentIndex);
+          });
+        </script>
+    
+        <!-- Colonne Info (plus longue) -->
+        <div class="blog-info">
+          <h3>INFORMATION</h3>
+          <p>SANZIO TECH est une entreprise spécialisée dans la technologie et l’innovation numérique, offrant une large gamme de services pour accompagner particuliers, entreprises et institutions dans leur transformation digitale. Nous intervenons dans la création de programmes et d’applications pour desktop et mobile, la conception de sites web et de logiciels de gestion sur mesure, ainsi que l’installation de systèmes d’exploitation et la maintenance informatique, aussi bien pour le matériel que pour les logiciels. Nous proposons également des services de design et de graphisme, incluant la conception d’affiches, de maquettes, de logos et de supports visuels modernes. En parallèle, nous assurons des formations et un apprentissage en informatique de gestion afin de renforcer les compétences numériques. Enfin, nous développons des stratégies de marketing digital et de création de contenu adaptées aux besoins des marques. Notre mission est de fournir des solutions fiables, esthétiques et performantes, en combinant créativité et expertise technique, afin de devenir un partenaire de confiance pour tous ceux qui souhaitent exploiter pleinement le potentiel des technologies modernes..</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+<!-- Pied de page -->
+<footer>
+  <p>&copy; 2026 SANZIO TECH - Tous droits réservés</p>
+  <p>Adresse: Lubumbashi, RDC</p>
+  <p>Contactez-nous</p>
+  <!-- Contact -->
+<section id="contact">
+  <h2>Contactez-nous</h2>
+  <form>
+    <form action="" method="post" enctype="text/plain">
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="message">Message :</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
+
+
+  
+
+  <section id="partenaires" class="partners-section">
+    <h2>Nos Partenaires</h2>
+    <div class="partners-grid">
+        <img src="images/AKIM.jpg" alt="AKIM SERVICES">
+        <img src="images/KEN.jpg" alt="KEN LA MENACE">
+        <img src="images/JMMA.png" alt="JMMA">
+        <img src="images/GREAT.jpg" alt="GREAT CONSTRUCTION">
+        <img src="images/MEDIA.png" alt="MEDIA">
+    </div>
+  </section>
+
+
+<!-- Ajoute ce lien dans ton <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<section id="platforme" class="platforme-section">
+  <h4>Nous sommes disponible sur:</h4>
+  <div class="platforme-grid">
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/profile.php?id=61588158450428&sk=directory_links" target="_blank">
+      <i class="fab fa-facebook fa-2x"></i>
+    </a>
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/sanzio-tech-7004863b1/" target="_blank">
+      <i class="fab fa-linkedin fa-2x"></i>
+    </a>
+    <!-- WhatsApp -->
+    <a href="https://wa.me/+243997190772" target="_blank">
+      <i class="fab fa-whatsapp fa-2x"></i>
+    </a>
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/sanzio_tech/" target="_blank">
+      <i class="fab fa-instagram fa-2x"></i>
+    </a>
+    <!-- Twitter -->
+    <a href="https://twitter.com/tonprofil" target="_blank">
+      <i class="fab fa-twitter fa-2x"></i>
+    </a>
+  </div>
+</section>
+
+</footer>
+
+<!-- Lien vers ton fichier JS -->
+<script src="script.js"></script>
+</body>

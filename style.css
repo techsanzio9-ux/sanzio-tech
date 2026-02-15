@@ -1,0 +1,791 @@
+/* Style global */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background:  url("images/arrière\ plan.jpg") no-repeat center center fixed; 
+    background-size: cover;
+    position: relative; /* nécessaire pour ::before */
+    min-height: 100vh;
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: fixed;      /* reste fixé en haut */
+    top: 0;               /* collé en haut */
+    left: 0;
+    width: 100%;          /* occupe toute la largeur */
+    z-index: 1000;        /* au-dessus du contenu */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #ffffff, #2a3fff, #ff80d5b4);
+  }
+
+/* Image d’arrière-plan avec opacité réduite */
+body::before {
+    content: "";
+    position: fixed; /* reste fixe */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("images/arrière plan.jpg") no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.2; /* règle l’opacité (20%) */
+    z-index: -1; /* derrière le contenu */
+}
+  /* Logo + Nom */
+  .brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 80px;
+    width: auto;
+    margin-right: 10px;
+  }
+  
+/* Effet clignotant net sur SANZIO TECH */
+.brand-name {
+  font-size: 3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'technoma', Arial, sans-serif;
+  letter-spacing: 2px;
+  animation: blinkColors 2s infinite; /* clignotement avec couleurs */
+}
+
+/* Animation changement de couleurs sans lueur */
+@keyframes blinkColors {
+  0%   { color: #ff0000; }   /* rouge */
+  25%  { color: #ffc400; }   /* vert */
+  50%  { color: #00eeff; }   /* bleu */
+  75%  { color: #6200ff; }   /* violet */
+  100% { color: #ffffff; }   /* jaune */
+}
+  /* Liens de navigation en boutons */
+      .nav-links {
+    
+    list-style: none;
+    display: flex;
+    gap: 30px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: 2px solid #ffffff; /* bordure blanche */
+    border-radius: 25px;       /* arrondi */
+    background: transparent;   /* intérieur transparent */
+    transition: all 0.3s ease;
+    margin-right: 50px;
+  }
+  
+  .nav-links a:hover {
+    background: rgba(255, 230, 0, 0.2); /* léger fond au survol */
+  }
+  
+  
+  .presentation-container {
+    display: flex;
+    justify-content: space-between; /* espace entre les deux */
+    align-items: stretch;           /* même hauteur */
+    gap: 30px;                      /* séparation */
+    padding-top: 130px;             /* espace uniquement en haut */
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-bottom: 50px;
+  }
+
+/* Bloc texte */
+.presentation-blog {
+  flex: 16; /* prend plus de largeur */
+  background: linear-gradient(to right, #00f7ff, #ffffff, #ffffffb4);
+  border-radius: 20px;
+  box-shadow: 0 15px 15px rgba(0,0,0,0.3);
+  padding: 20px;
+  
+  }
+
+/* Bloc texte de présentation */
+.presentation-blog p {
+  font-size: 1.4em;   /* texte plus grand */
+  line-height: 1,3;   /* plus d’espace entre les lignes */
+  color: #333;
+}
+
+/* Titre de présentation */
+.presentation-blog h2 {
+  font-size: 2.5em;   /* agrandir le titre */
+  font-family: 'Montserrat', Arial, sans-serif; /* nouvelle police */
+  font-weight: 700;
+  color: #1100ff;
+  margin-bottom: 10px;
+}
+
+/* Bloc slider agents */
+.agents-slider {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  height: 500px;       /* fixe la hauteur */
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.agent-card img {
+  width: 100%;       /* occupe toute la largeur du slider */
+  height: 100%;      /* occupe toute la hauteur du slider */
+  object-fit: cover; /* adapte l’image sans déformation */
+  border-radius: 15px;
+}
+  
+  /* Chaque agent occupe tout l’espace */
+  .agent-card {
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.85);
+    opacity: 0;
+    animation: slideShow 12s infinite;
+  }
+  
+  .agent-card img {
+    
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  
+  .agent-card h3 {
+    
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+    color: #1100ff;
+  }
+  
+  .agent-card p {
+    
+    font-size: 1em;
+    color: #333;
+  }
+  
+  /* Animation : chaque carte apparaît puis disparaît */
+  .agent-card:nth-child(1) { animation-delay: 0s; }
+  .agent-card:nth-child(2) { animation-delay: 4s; }
+  .agent-card:nth-child(3) { animation-delay: 8s; }
+  
+  @keyframes slideShow {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    30% { opacity: 1; }
+    35% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  /* Section Services */
+.services-header {
+    text-align: center;
+    background: linear-gradient(to right, #ffffff, #2a3fff, #ff80d5b4);
+    padding: 15px;
+  }
+  
+  .services-header h2 {
+    color: #ffffff;
+    font-size: 2.5em;
+    font-family: 'Technoma', Arial, sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  
+  /* Grille des services */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 colonnes */
+    gap: 50px;
+    padding: 30px;
+    max-width: 1600px;
+    margin: 0 auto;
+    margin-left:20px ;
+  }
+  
+  .service-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+
+
+
+
+
+
+
+
+  .service-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .service-card h3 {
+    margin: 15px 0;
+    font-size: 1.3em;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr; /* une colonne sur mobile */
+    }
+  }
+  /* Responsive */
+  @media (max-width: 768px) {
+    .actualites-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .blog-image img,
+    .blog-video video {
+      width: 100%;
+      height: auto;
+    }
+  }
+  
+  .services-section {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Conteneur centré */
+  .circle-sequence {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  
+  /* Style de base des cercles */
+  .ring {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background: rgb(0, 255, 98);       /* cercles pleins blancs */
+    border-radius: 50%;
+    opacity: 0.3;
+    aspect-ratio: 1 / 1;     /* garantit un cercle parfait */
+  }
+  
+  /* Tailles fixes pour éviter les ellipses */
+  .ring-1 { width: 500px; height: 500px; }
+  .ring-2 { width: 400px; height: 400px; }
+  .ring-3 { width: 300px; height: 300px; }
+  
+  /* Animation de croissance + disparition */
+  @keyframes growFade {
+    0%   { transform: translate(-50%, -50%) scale(0.1); opacity: 0.3; }
+    60%  { transform: translate(-50%, -50%) scale(1);   opacity: 0.5; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0; }
+  }
+  
+  /* Animation automatique au lancement */
+  .circle-sequence .ring-1 {
+    animation: growFade 5s ease-out infinite;
+    animation-delay: 0s;
+  }
+  .circle-sequence .ring-2 {
+    animation: growFade 5s ease-out infinite;
+    animation-delay: 1.6s;
+  }
+  .circle-sequence .ring-3 {
+    animation: growFade 5s ease-out infinite;
+    animation-delay: 3.2s;
+  }
+  
+  /* Survol → arrêter l’animation */
+  .services-section:hover .ring {
+    animation-play-state: paused;
+  }
+  /* Pied de page */
+  footer {
+    background: linear-gradient(to right, #2085f8, #ffffff, #083ff3b4);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 2px solid #ccc;
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #333;
+  }
+  
+  #contact {
+    max-width: 600px;       /* largeur fixe et centrée */
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #contact h2 {
+    text-align: center;
+    color: #1100ff;
+    font-size: 2em;
+    margin-bottom: 14px;
+  }
+  
+  /* Formulaire */
+
+  /* Champs texte et email */
+  #contact input[type="text"],
+  #contact input[type="email"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    border: 1px solid #ccc;
+    border-radius: 25px;   /* arrondi */
+    box-sizing: border-box;
+    margin-bottom: 15px;
+  }
+  
+  /* Zone de message */
+  #contact textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    border: 1px solid #ccc;
+    border-radius: 25px;   /* arrondi */
+    box-sizing: border-box;
+    height: 50mm;          /* hauteur fixe de 50 mm */
+    resize: vertical;      /* possibilité d’agrandir si besoin */
+    margin-bottom: 15px;
+  }
+  
+  /* Bouton */
+  #contact button {
+    background-color: #007BFF; /* bleu */
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;   /* arrondi */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #contact button:hover {
+    background-color: #0056b3; /* bleu foncé au survol */
+  }
+  
+
+  /* Header de Services */
+.services-header {
+    text-align: center;
+    background: linear-gradient(to right, #ffffff, #2a3fff, #ff80d5b4);
+    padding: 15px;
+  }
+  
+  .services-header h2 {
+    color: #ffffff;
+    font-size: 2.5em;
+    font-family: 'Technoma', Arial, sans-serif;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  
+/* Header d'Actualités */
+.actualites-header {
+  text-align: center;
+  background: linear-gradient(to right, #ffffff, #2a3fff, #ff80d5b4);
+  padding: 15px;
+  margin-top: 40px;
+}
+
+.actualites-header h2 {
+  color: #ffffff;
+  font-size: 2.5em;
+  font-family: 'Technoma', Arial, sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+
+/* Navbar Actualités */
+.actualites-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+  margin: 15px 0 0;
+  padding: 0;
+}
+
+.actualites-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Technoma', Arial, sans-serif;
+  transition: color 0.3s;
+}
+
+.actualites-nav a:hover {
+  color: #ff80d5; /* effet au survol */
+}
+
+/* Conteneur en 3 colonnes */
+.actualites-container {
+  display: grid;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  
+    display: flex;
+    gap: 40px;
+  }
+  
+  .blog-image, .blog-video {
+    flex: 2; /* largeur normale */
+  }
+  
+  .blog-info {
+    flex: 2; /* largeur doublée */
+  }
+  
+
+
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 4s; }
+.slide:nth-child(3) { animation-delay: 8s; }
+
+@keyframes slideShow {
+  0% { opacity: 0; }
+  5% { opacity: 1; }
+  30% { opacity: 1; }
+  35% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* Bloc photo */
+.blog-image {
+  position: relative;
+  height: 300px; /* hauteur fixe */
+  overflow: hidden;
+}
+.blog-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Bloc vidéo */
+.blog-video {
+  position: relative;
+  height: 300px; /* même hauteur que photo */
+  overflow: hidden;
+}
+.blog-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Bloc info (plus long) */
+.blog-info {
+  position: relative;
+  min-height: 200px; /* plus long que les autres */
+  background: rgba(255,255,255,0.85);
+  border-radius: 20px;
+  padding: 20px;
+  font-family: 'Arial', Arial, sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .actualites-container {
+    grid-template-columns: 1fr; /* une seule colonne sur mobile */
+  }
+
+  .blog-image img,
+  .blog-video video {
+    height: auto;
+    transform: none; /* pas de décalage sur mobile */
+  }
+
+  .blog-info {
+    min-height: auto;
+  }
+}
+
+  /* Bouton retour en haut */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none; /* caché par défaut */
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2em;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+}
+
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+  background: none;   /* pas de fond */
+  border: none;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  z-index: 9999;
+}
+
+#backToTop img {
+  width: 100%;
+  height: 100%;
+}
+
+.blog-video {
+  position: relative; /* permet de placer les boutons par-dessus */
+}
+
+.video-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 123, 255, 0.8); /* bleu translucide */
+  color: #fff;
+  border: none;
+  border-radius: 50%; /* bouton rond */
+  width: 50px;
+  height: 50px;
+  font-size: 1.5em;
+  cursor: pointer;
+  z-index: 10; /* assure que le bouton est au-dessus de la vidéo */
+}
+
+#prevBtn { left: 10px; }
+#nextBtn { right: 10px; }
+
+.video-btn:hover {
+  background: rgba(0, 86, 179, 0.9); /* bleu plus foncé au survol */
+}
+
+#prevBtn { left: 10px; }
+#nextBtn { right: 10px; }
+
+.video-btn:hover {
+  background: rgba(0, 86, 179, 0.9); /* bleu plus foncé au survol */
+}
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px; /* même padding que les liens */
+  margin-right: 20px; /* ajoute une marge à droite */
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: rgba(0,0,0,0.9);
+    position: absolute;
+    top: 70px;               /* juste sous la navbar */
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    border-radius: 0 0 10px 10px;
+    max-height: 0;           /* caché par défaut */
+    overflow: hidden;        /* masque le contenu */
+    transition: max-height 0.4s ease-out; /* animation fluide */
+  }
+
+  .nav-links.show {
+    max-height: 300px;       /* hauteur suffisante pour afficher les liens */
+    padding: 20px;           /* ajoute le padding quand ouvert */
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px; /* même padding que les autres */
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .presentation-container {
+    flex-direction: column;   /* empile les blocs */
+    align-items: center;      /* centre horizontalement */
+  }
+
+  .presentation-blog {
+    flex: none;
+    width: 100%;
+  }
+
+  .agents-slider {
+    position: relative;
+    width: 100%;              /* occupe toute la largeur */
+    max-width: 600px;         /* limite pour éviter trop grand */
+    height: 400px;            /* hauteur fixe adaptée */
+    margin-top: 20px;
+    overflow: hidden;         /* garde l’effet slider */
+  }
+
+  .agent-card {
+    position: absolute;       /* reste en absolu pour l’animation */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: slideShow 12s infinite; /* garde l’animation */
+  }
+
+  .agent-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+}
+.agent-card {
+  position: absolute;       /* garde l’absolu pour l’animation */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: slideShow 12s infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* place le texte en bas de l’image */
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.agent-card h3, .agent-card p {
+  background: rgba(0,0,0,0.6); /* fond semi-transparent pour lisibilité */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+  text-align: center;
+  font-size: 1em;
+}
+
+
+.partners-section {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.partners-section h2 {
+  font-size: 1.8em;
+  color: #1100ff;
+  margin-bottom: 15px;
+}
+
+.partners-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.partners-grid img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.partners-grid img:hover {
+  transform: scale(1.2);
+}
+
+
+.platforme-section {
+  text-align: center;
+  padding: 20px;
+}
+
+.platforme-section h4 {
+  font-size: 1.5em;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.platforme-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.platforme-grid a {
+  color: #000000; /* couleur par défaut */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.platforme-grid a:hover {
+  transform: scale(1.2);
+  color: #ff4081; /* couleur au survol */
+}
+
+.platforme-grid i {
+  font-size: 2em; /* taille des icônes */
+}
