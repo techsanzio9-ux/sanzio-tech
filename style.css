@@ -795,12 +795,13 @@ body::before {
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* évite le défilement horizontal */
+  overflow-x: hidden; /* bloque le défilement horizontal */
 }
 
 .section-avec-background {
-  background-image: url("images/ton-image.jpg");
-  background-size: cover;       /* adapte l’image à la taille du conteneur */
-  background-position: center;  /* centre l’image */
-  background-repeat: no-repeat; /* évite les répétitions */
+  background-image: url("images/arrière\ plan.jpg");
+  background-size: cover;       /* l’image remplit tout l’espace */
+  background-position: center;  /* centrée */
+  background-repeat: no-repeat; /* pas de répétition */
+  background-attachment: fixed; /* optionnel : fixe l’image */
 }
