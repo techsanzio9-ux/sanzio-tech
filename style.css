@@ -791,17 +791,32 @@ body::before {
 }
 
 
-
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* bloque le défilement horizontal */
+  overflow-x: hidden;       /* bloque le débordement horizontal */
+  background: linear-gradient(to bottom, #0044cc, #6600cc); /* exemple dégradé */
+  min-height: 100vh;        /* couvre toute la hauteur */
+}
+
+header {
+  position: fixed;          /* reste en haut */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;            /* au-dessus du contenu */
+}
+
+.navbar {
+  position: fixed;          /* navbar fixe */
+  top: 0;
+  width: 100%;
 }
 
 .section-avec-background {
-  background-image: url("images/arrière\ plan.jpg");
-  background-size: cover;       /* l’image remplit tout l’espace */
-  background-position: center;  /* centrée */
-  background-repeat: no-repeat; /* pas de répétition */
-  background-attachment: fixed; /* optionnel : fixe l’image */
+  background-image: url("images/ton-image.jpg");
+  background-size: cover;   /* l’image remplit tout */
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;        /* occupe toute la hauteur */
 }
