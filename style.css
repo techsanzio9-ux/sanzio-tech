@@ -792,12 +792,13 @@ body {
 /* Background qui couvre exactement l’écran */
 .section-avec-background {
   background-image: url("images/arriere-plan.jpg");
-  background-size: cover;       /* couvre tout l’espace */
-  background-position: center;  /* centré */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  width: 100vw;                 /* largeur exacte de l’écran */
-  min-height: 100vh;            /* hauteur exacte de l’écran */
-  
+  width: 100vw;       /* largeur exacte de l’écran */
+  max-width: 100vw;   /* ne dépasse jamais */
+  min-height: 100vh;  /* hauteur exacte de l’écran */
+  box-sizing: border-box;
 }
 
 @media (max-width: 430px) {
