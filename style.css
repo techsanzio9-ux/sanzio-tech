@@ -791,9 +791,10 @@ body {
 }
 
 .section-avec-background {
-  background-image: url("images/arrière\ plan.jpg");
-  background-size: cover;       /* l’image remplit tout l’espace */
-  background-position: center;  /* centrée */
+  background-image: url("images/arriere-plan.jpg");
+  background-size: cover;       /* couvre tout l’espace */
+  background-position: center;  /* reste centré */
   background-repeat: no-repeat; /* pas de répétition */
-  background-attachment: fixed; /* optionnel : fixe l’image */
+  background-attachment: scroll; /* au lieu de fixed */
+  min-height: 100vh;
 }
