@@ -784,17 +784,34 @@ body::before {
 
 
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* bloque le défilement horizontal */
+/* Navbar toujours pleine largeur */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;        /* occupe toute la largeur */
+  max-width: 100vw;   /* ne dépasse jamais l’écran */
 }
 
+/* Background qui couvre exactement l’écran */
 .section-avec-background {
   background-image: url("images/arriere-plan.jpg");
   background-size: cover;       /* couvre tout l’espace */
-  background-position: center;  /* reste centré */
-  background-repeat: no-repeat; /* pas de répétition */
-  background-attachment: scroll; /* au lieu de fixed */
-  min-height: 100vh;
+  background-position: center;  /* centré */
+  background-repeat: no-repeat;
+  width: 100vw;                 /* largeur exacte de l’écran */
+  min-height: 100vh;            /* hauteur exacte de l’écran */
+  
+}
+
+@media (max-width: 430px) {
+  .navbar {
+    padding: 10px;
+    font-size: 1em;   /* texte adapté */
+  }
+
+  .section-avec-background {
+    width: 100vw;
+    min-height: 100vh;
+  }
 }
