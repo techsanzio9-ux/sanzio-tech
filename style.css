@@ -200,13 +200,14 @@ body {
 /* Grille des services */
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colonnes sur grand écran */
-  gap: 30px;              /* réduit l’espace pour éviter les débords */
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  grid-template-rows: auto;              /* les lignes se créent automatiquement */
+  gap: 30px;                             /* espace entre les cartes */
   padding: 20px;
-  width: 100%;            /* occupe toute la largeur disponible */
-  max-width: 1200px;      /* limite sur grand écran */
-  margin: 0 auto;         /* centre le contenu */
-  box-sizing: border-box; /* inclut padding/marges dans la largeur */
+  width: 100%;
+  max-width: 1200px;                     /* limite sur grand écran */
+  margin: 0 auto;
+  box-sizing: border-box;
 }
   
   .service-card {
@@ -244,10 +245,13 @@ body {
   }
   
   /* Responsive */
-  @media (max-width: 768px) {
-    .services-grid {
-      grid-template-columns: 1fr; /* une colonne sur mobile */
-    }
+@media (max-width: 430px) {
+  .services-grid {
+    grid-template-columns: 1fr; /* une seule colonne sur téléphone */
+    gap: 20px;
+    padding: 10px;
+  }
+}
   }
   /* Responsive */
   @media (max-width: 768px) {
